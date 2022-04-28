@@ -1,0 +1,20 @@
+﻿@model BonusMvcStok.Models.entity.TBLKATEGORI
+@{
+    ViewBag.Title = "kategorigetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>kategorigetir</h2>
+@using (Html.BeginForm("kategorigüncelle", "kategoriler", FormMethod.Post))
+{
+    
+       <h2>KATEGORİ GÜNCELLEME SAYFASI</h2>
+        @Html.TextBoxFor(m => m.ad, new { @class = "form-control" })
+      <br />
+        @Html.HiddenFor(m => m.id)
+      <br />
+        <button class="btn btn-warning">Güncelle</button>
+    
+
+
+}

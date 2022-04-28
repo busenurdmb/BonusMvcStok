@@ -1,0 +1,44 @@
+﻿@using BonusMvcStok.Models.entity
+@model List<TBLURUNLER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("Index", "ürün", FormMethod.Get))
+{
+    <p>
+        ürün adı:@Html.TextBox("p");
+        <input type="submit" value="ara" />
+    </p>
+}
+<h2>ÜRÜN SAYFASI</h2> <br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>ÜRÜN ADI</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>ALIŞ FİYATI</th>
+        <th>SATIŞ FİYATI</th>
+        <th>KATEGORİ</th>
+        <th>İŞLEMLER</th>
+    </tr>
+
+    <tbody>
+        @foreach (var ürün in Model)
+        {
+        <tr>
+            <td>@ürün.id</td>
+            <td>@ürün.ad</td>
+            <td>@ürün.marka</td>
+            <td>@ürün.stok</td>
+            <td>@ürün.alisfiyat</td>
+            <td>@ürün.satisfiyat</td>
+            <td>@ürün.TBLKATEGORI.ad</td>
+            <td><a href="/ürün/UrunSil/@ürün.id" class="btn btn-danger">Sil</a>
+            <a href="/ürün/ürüngetir/@ürün.id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/ürün/yeniurun" class="btn btn-primary">Ürün Ekle</a>

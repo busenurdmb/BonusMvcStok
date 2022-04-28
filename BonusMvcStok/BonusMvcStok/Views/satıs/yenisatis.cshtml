@@ -1,0 +1,34 @@
+﻿@model BonusMvcStok.Models.entity.TBLSATISLAR
+@{
+    ViewBag.Title = "yenisatis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post">
+
+    <br />
+    <label>ÜRÜN</label>
+    @*@Html.TextBoxFor(m => m.urun, new { @class = "form-control" })*@
+    @Html.DropDownListFor(m => m.TBLURUNLER.id, (List<SelectListItem>)ViewBag.dropürün, new { @class = "form-control" })
+    <br />
+    <br />
+    <label>PERSENOL</label>
+    @*@Html.TextBoxFor(m => m.personel, new { @class = "form-control" })*@
+    @Html.DropDownListFor(m => m.TBLPERSONEL.id, (List<SelectListItem>)ViewBag.dropper, new { @class = "form-control" })
+    <br />
+    <br />
+    <label>MÜŞTERİ</label>
+    @*@Html.TextBoxFor(m => m.musterı, new { @class = "form-control" })*@
+    @Html.DropDownListFor(m => m.TBLMUSTERILER.id, (List<SelectListItem>)ViewBag.dropmus, new { @class = "form-control" })
+    <br />
+    <br />
+    <label>FİYAT</label>
+    @Html.TextBoxFor(m => m.fıyat, new { @class = "form-control" })
+
+    <br />
+    <br />
+
+    <button class="btn btn-success">Satış Yap</button>
+
+</form>

@@ -1,0 +1,30 @@
+﻿@model BonusMvcStok.Models.entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "musterigetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("güncelle", "müsteri", FormMethod.Post))
+{
+    <h2>Müşteri Güncelleme</h2>
+
+    <br />
+    <label>ADI</label>
+    @Html.TextBoxFor(m => m.ad, new { @class = "form-control" })
+    <br />
+    <label>Soyadı</label>
+    @Html.TextBoxFor(m => m.soyad, new { @class = "form-control" })
+    <br />
+    <label>Şehir</label>
+    @Html.TextBoxFor(m => m.sehir, new { @class = "form-control" })
+    <br />
+    <label>Bakiye</label>
+    @Html.TextBoxFor(m => m.bakiye, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(m => m.id)
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+
+
+}

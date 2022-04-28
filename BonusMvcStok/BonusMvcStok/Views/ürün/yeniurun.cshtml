@@ -1,0 +1,43 @@
+﻿@model BonusMvcStok.Models.entity.TBLURUNLER
+
+@{
+    ViewBag.Title = "yeniurun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post">
+    <h2>ürün ekle</h2>
+    <br />
+    <label>Ürün Adı</label>
+    @*<input type="text" class="form-control" name="ad" placeholder="ürün adı giriniz.." />*@
+    @Html.TextBoxFor(m => m.ad, new { @class = "form-control" })
+    <br />
+
+    <label>Marka</label>
+    @*<input type="text" class="form-control" name="ad" placeholder="ürün adı giriniz.." />*@
+    @Html.TextBoxFor(m => m.marka, new { @class = "form-control" })
+    <br />
+
+    <label>Stok</label>
+    @*<input type="text" class="form-control" name="ad" placeholder="ürün adı giriniz.." />*@
+    @Html.TextBoxFor(m => m.stok, new { @class = "form-control" })
+    <br />
+
+    <label>Alış Fiyat</label>
+    @*<input type="text" class="form-control" name="ad" placeholder="ürün adı giriniz.." />*@
+    @Html.TextBoxFor(m => m.alisfiyat, new { @class = "form-control" })
+    <br />
+
+    <label>Satış Fiyat</label>
+    @*<input type="text" class="form-control" name="ad" placeholder="ürün adı giriniz.." />*@
+    @Html.TextBoxFor(m => m.satisfiyat, new { @class = "form-control" })
+    <br />
+
+    <label>Kategori</label>
+    @*<input type="text" class="form-control" name="ad" placeholder="ürün adı giriniz.." />*@
+    @*@Html.TextBoxFor(m => m.kategori, new { @class = "form-control" })*@
+    @Html.DropDownListFor(m => m.TBLKATEGORI.id, (List<SelectListItem>)ViewBag.dropdeger, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">kaydet</button>
+</form>
